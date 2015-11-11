@@ -1,0 +1,21 @@
+{
+  "name": "mobile",
+  "description": "mobile app",
+  "main": "app.js",
+  "authors": [
+    "jgluhov"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "mobile"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
