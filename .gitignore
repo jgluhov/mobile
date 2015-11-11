@@ -1,5 +1,8 @@
-# Dependency directory
+# Node dependency directory
 node_modules/
+
+# Bower dependency directory
+bower_components/
 
 # WebStorm directory
 .idea/
