@@ -9,14 +9,23 @@ zeroState.config(['$routeProvider', '$locationProvider',
 
       $routeProvider
         .when("/", {
-          templateUrl: "templates/home.jade",
-          controller: "homeController"
+          templateUrl: "templates/home",
+          controller: "HomeIndexController"
+        })
+
+        .when('/knowledges', {
+          templateUrl: "templates/knowledges",
+          controller: "KnowledgesIndexController"
         })
     }
   ]
 );
 
 
-zeroState.controller('homeController', function($scope) {
+zeroState.controller('HomeIndexController', function($scope) {
+  $scope.message = 'Everyone come and see how good I look!';
+});
+
+zeroState.controller('KnowledgesIndexController', function($scope) {
   $scope.message = 'Everyone come and see how good I look!';
 });
