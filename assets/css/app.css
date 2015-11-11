@@ -1,0 +1,12 @@
+body {
+  background: #4b6a7a;
+  background: -webkit-radial-gradient(ellipse at center, #00b7ea 0%, #009ec3 100%);
+  background: -moz-radial-gradient(ellipse at center, #00b7ea 0%, #009ec3 100%);
+  background: -o-radial-gradient(ellipse at center, #00b7ea 0%, #009ec3 100%);
+  background: -ms-radial-gradient(ellipse at center, #00b7ea 0%, #009ec3 100%);
+  background: radial-gradient(ellipse at center, #00b7ea 0%, #009ec3 100%);
+}
+.uk-nav {
+  width: 250px;
+  background-color: #fff;
+}

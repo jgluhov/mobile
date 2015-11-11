@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
   stylus = require('gulp-stylus'),
+  nib = require('nib'),
   browserSync = require('browser-sync').create(),
   less = require('gulp-less');
 
@@ -16,16 +17,9 @@ gulp.task('less', function () {
     .pipe(browserSync.stream());
 });
 
-gulp.task('less', function () {
-  gulp.src('./src/less/uikit.less')
-    .pipe(less())
-    .pipe(gulp.dest('./assets/css'))
-    .pipe(browserSync.stream());
-});
-
 gulp.task('styl', function () {
   gulp.src('./src/styl/app.styl')
-    .pipe(stylus())
+    .pipe(stylus({use: nib(), import: 'nib'}))
     .pipe(gulp.dest('./assets/css'))
     .pipe(browserSync.stream());
 });
@@ -36,6 +30,7 @@ gulp.task('serve', ['js','less','styl'], function() {
   });
 
   gulp.watch("src/js/*.js", ['js']);
+  gulp.watch("src/less/*.less", ['less']);
   gulp.watch("src/styl/*.styl", ['styl']);
 });
 
