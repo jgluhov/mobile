@@ -17,6 +17,8 @@ zeroState.config(['$routeProvider', '$locationProvider',
           templateUrl: "templates/knowledges",
           controller: "KnowledgesIndexController"
         })
+
+        .otherwise({redirectTo: '/'})
     }
   ]
 );
