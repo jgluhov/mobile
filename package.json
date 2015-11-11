@@ -24,6 +24,7 @@
     "browser-sync": "^2.10.0",
     "gulp": "^3.9.0",
     "gulp-less": "^3.0.3",
+    "gulp-plumber": "^1.0.1",
     "gulp-stylus": "^2.1.0",
     "morgan": "^1.6.1",
     "nib": "^1.1.0"

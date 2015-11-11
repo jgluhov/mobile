@@ -10,3 +10,53 @@ body {
   width: 250px;
   background-color: #fff;
 }
+.zs-form .uk-form-large {
+  height: 82px !important;
+}
+.zs-form .uk-form-row {
+  position: relative;
+  z-index: 1;
+}
+.zs-form .zs-sign {
+  position: relative;
+  z-index: 0;
+  margin: 0 auto;
+  top: 75px;
+  background-image: url("/img/hash.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 250px;
+}
+.zs-form .zs-input-wrap {
+  padding: 5px 30px;
+  background-color: #fff;
+  border: 4px solid #52798e;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+.zs-form .zs-input-wrap input {
+  width: 300px;
+  font-size: 50px;
+  font-weight: 100;
+  color: #bdd1d7;
+  border: none !important;
+}
+.zs-form .zs-input-wrap input:focus {
+  background-color: #fff;
+  color: #8ea1a7;
+}
+.zs-button-state {
+  height: 100px;
+  width: 100px;
+  border: 1px solid #52798e;
+  -webkit-box-shadow: 0 0 10px #52798e;
+  box-shadow: 0 0 10px #52798e;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #5f9aa9;
+}

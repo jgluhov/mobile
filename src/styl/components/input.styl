@@ -1,0 +1,36 @@
+.zs-form
+  .uk-form-large
+    height 82px!important
+
+  .uk-form-row
+    position relative
+    z-index 1
+
+  .zs-sign
+    position relative
+    z-index 0
+    margin 0 auto
+    top 75px
+
+    background-image url('/img/hash.png')
+    background-size cover
+    background-repeat no-repeat
+
+    width 250px
+    height 250px
+
+  .zs-input-wrap
+    padding 5px 30px
+    background-color zs-input-wrap-color
+    border 4px solid zs-input-wrap-border-color
+    border-radius 50px
+
+    input
+      width zs-input-width
+      font-size zs-input-font-size
+      font-weight 100
+      color zs-input-color
+      border none!important
+      &:focus
+        background-color zs-input-wrap-color
+        color zs-input-color-focus
