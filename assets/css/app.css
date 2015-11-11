@@ -6,6 +6,9 @@ body {
   background: -ms-radial-gradient(ellipse at center, #00b7ea 0%, #009ec3 100%);
   background: radial-gradient(ellipse at center, #00b7ea 0%, #009ec3 100%);
 }
+html {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 .uk-nav {
   width: 250px;
   background-color: #fff;
@@ -38,7 +41,7 @@ body {
   border-radius: 50px;
 }
 .zs-form .zs-input-wrap input {
-  width: 300px;
+  min-width: 350px;
   font-size: 50px;
   font-weight: 100;
   color: #bdd1d7;
@@ -49,14 +52,21 @@ body {
   color: #8ea1a7;
 }
 .zs-button-state {
-  height: 100px;
-  width: 100px;
-  border: 1px solid #52798e;
+  height: 120px;
+  width: 120px;
+  background-color: #fff;
+  border: 3px solid #52798e;
   -webkit-box-shadow: 0 0 10px #52798e;
   box-shadow: 0 0 10px #52798e;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
+  -webkit-border-radius: 80px;
+  border-radius: 80px;
   font-size: 16px;
   font-weight: 600;
   color: #5f9aa9;
+}
+.zs-button-state:focus {
+  color: #5f9aa9 !important;
+}
+.zs-button-state:hover {
+  color: #5f9aa9 !important;
 }
