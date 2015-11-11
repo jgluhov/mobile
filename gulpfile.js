@@ -1,10 +1,25 @@
-var gulp = require('gulp');
-var stylus = require('gulp-stylus');
-var browserSync = require('browser-sync').create();
+var gulp = require('gulp'),
+  stylus = require('gulp-stylus'),
+  browserSync = require('browser-sync').create(),
+  less = require('gulp-less');
 
 gulp.task('js', function () {
   gulp.src('./src/js/*.js')
     .pipe(gulp.dest('./assets/js'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('less', function () {
+  gulp.src('./src/less/uikit.less')
+    .pipe(less())
+    .pipe(gulp.dest('./assets/css'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('less', function () {
+  gulp.src('./src/less/uikit.less')
+    .pipe(less())
+    .pipe(gulp.dest('./assets/css'))
     .pipe(browserSync.stream());
 });
 
@@ -15,7 +30,7 @@ gulp.task('styl', function () {
     .pipe(browserSync.stream());
 });
 
-gulp.task('serve', ['js','styl'], function() {
+gulp.task('serve', ['js','less','styl'], function() {
   browserSync.init({
     proxy: "localhost:3000"
   });
