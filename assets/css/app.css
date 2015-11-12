@@ -118,7 +118,7 @@ html {
   transform: scale(0.7);
 }
 .popover-content {
-  padding: 3px 5px;
+  padding: 3px 15px;
 }
 ul.list-unstyled {
   margin-bottom: 0;
@@ -146,10 +146,16 @@ ul.list-unstyled li {
   width: 100% !important;
   max-width: none;
   border: none;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+}
+.popover > .arrow {
+  border-width: 6px;
 }
 .popover.top {
-  margin-top: -8px;
+  margin-top: -6px;
 }
 .popover.top > .arrow {
   left: 30% !important;
+  bottom: -6px;
 }
