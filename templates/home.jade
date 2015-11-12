@@ -8,14 +8,16 @@
         input(type="text" placeholder="" ng-model='state.emotions[0].name'
         uib-popover-html='popover.emotion.messages'
         popover-placement="top" popover-trigger="none"
-        popover-is-open="popover.emotion.state"
+        popover-is-open="popover.emotion.state && popover.emotion.focus"
         popover-animation='true'
         popover-append-to-body='false'
+        focus="popover.emotion.focus"
         ng-change='onChange(state.emotions[0].name)' required)
     .uk-form-row.uk-container-center
       .uk-form-icon
         .uk-icon-at
         input(type="text" placeholder="" ng-model='state.record.title' required)
-.footer
-  .uk-form-row
-    button.btn-floating.btn-large.white.zs-button(ng-click='submit(stateForm)') STATE IT
+    .uk-form-row.zs-button-box
+      button.btn-floating.btn-large.white.zs-button(ng-click='submit(stateForm)') STATE IT
+
+  .clearfix

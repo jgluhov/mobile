@@ -12,11 +12,11 @@ html {
 }
 body {
   background: #4b6a7a;
-  background: -webkit-radial-gradient(ellipse at center, #00b7ea 0%, #005071 100%);
-  background: -moz-radial-gradient(ellipse at center, #00b7ea 0%, #005071 100%);
-  background: -o-radial-gradient(ellipse at center, #00b7ea 0%, #005071 100%);
-  background: -ms-radial-gradient(ellipse at center, #00b7ea 0%, #005071 100%);
-  background: radial-gradient(ellipse at center, #00b7ea 0%, #005071 100%);
+  background: -webkit-radial-gradient(ellipse at center, rgba(0,183,234,0.7) 0%, #54778a 100%);
+  background: -moz-radial-gradient(ellipse at center, rgba(0,183,234,0.7) 0%, #54778a 100%);
+  background: -o-radial-gradient(ellipse at center, rgba(0,183,234,0.7) 0%, #54778a 100%);
+  background: -ms-radial-gradient(ellipse at center, rgba(0,183,234,0.7) 0%, #54778a 100%);
+  background: radial-gradient(ellipse at center, rgba(0,183,234,0.7) 0%, #54778a 100%);
   font-family: 'Open Sans', sans-serif;
 }
 html {
@@ -85,15 +85,21 @@ html {
   top: 36%;
   left: 10px;
 }
-.footer .uk-form-row {
-  text-align: center;
+.zs-button-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 20px !important;
+  margin-top: 0 !important;
 }
-.footer .zs-button {
+.zs-button-box .zs-button {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   width: 70px;
   height: 70px;
   color: #5f9aa9;
+  font-weight: 800;
 }
 .uk-icon-hash {
   content: url("/img/hash_input.png");
@@ -134,4 +140,16 @@ ul.list-unstyled li {
 .ui-notification.success {
   color: #fff;
   background: #89aebb;
+}
+.popover {
+  left: 0 !important;
+  width: 100% !important;
+  max-width: none;
+  border: none;
+}
+.popover.top {
+  margin-top: -9px;
+}
+.popover.top > .arrow {
+  left: 30% !important;
 }
