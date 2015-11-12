@@ -74,6 +74,7 @@ html {
   height: 100%;
   color: #bdd1d7;
   font-weight: 300;
+  text-transform: lowercase;
 }
 .zs-form .uk-form-icon input:focus {
   color: #8ea1a7;
