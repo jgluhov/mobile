@@ -2,6 +2,7 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-appearance: none;
 }
 *,
 *:before,
@@ -52,6 +53,11 @@ html {
   border: 3px solid #52798e;
   font-size: 30px;
   height: 100%;
+  color: #bdd1d7;
+  font-weight: 300;
+}
+.zs-form .uk-form-icon input:focus {
+  color: #8ea1a7;
 }
 .uk-form-icon:not(.uk-form-icon-flip) > input {
   padding-left: 40px !important;
@@ -64,10 +70,11 @@ html {
   text-align: center;
 }
 .footer .zs-button {
-  height: 80px;
-  border: 3px solid #52798e;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  color: #5f9aa9;
 }
 .uk-icon-hash {
   content: url("/img/hash_input.png");
