@@ -48,6 +48,7 @@ html {
 }
 .zs-sign {
   height: 100%;
+  width: 80%;
   position: relative;
   top: 25px;
   background-image: url("/img/hashtag_bg@2x.png");
@@ -56,6 +57,7 @@ html {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  margin: 0 auto;
 }
 .zs-form {
   width: 80%;
@@ -131,24 +133,46 @@ ul.list-unstyled li {
 .ui-notification {
   width: 100%;
   text-align: center;
-  background: background-image: -webkit-linear-gradient(top, #a4bdc7 15%, #85b1c0 55%);;
-  background: background-image: -moz-linear-gradient(top, #a4bdc7 15%, #85b1c0 55%);;
-  background: background-image: -o-linear-gradient(top, #a4bdc7 15%, #85b1c0 55%);;
-  background: background-image: -ms-linear-gradient(top, #a4bdc7 15%, #85b1c0 55%);;
-  background: background-image: linear-gradient(to bottom, #a4bdc7 15%, #85b1c0 55%);;
-  font-weight: 200;
+  font-weight: 400;
 }
 .ui-notification.success {
   color: #fff;
-  background: #89aebb;
+  background-color: #b6d1db;
+  background-image: -webkit--webkit-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -webkit--moz-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -webkit--o-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -webkit--ms-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -webkit-linear-gradient(to bottom, #b6d1db 15%, #90c0cf 55%);
+  background-image: -moz--webkit-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -moz--moz-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -moz--o-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -moz--ms-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -moz-linear-gradient(to bottom, #b6d1db 15%, #90c0cf 55%);
+  background-image: -ms--webkit-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -ms--moz-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -ms--o-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -ms--ms-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -ms-linear-gradient(to bottom, #b6d1db 15%, #90c0cf 55%);
+  background-image: -o--webkit-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -o--moz-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -o--o-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -o--ms-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -o-linear-gradient(to bottom, #b6d1db 15%, #90c0cf 55%);
+  background-image: -webkit-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -moz-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -o-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: -ms-linear-gradient(top, #b6d1db 15%, #90c0cf 55%);
+  background-image: linear-gradient(to bottom, #b6d1db 15%, #90c0cf 55%);
 }
 .popover {
   left: 0 !important;
   width: 100% !important;
+  background-color: #f0f4f7;
   max-width: none;
   border: none;
   -webkit-border-radius: 15px;
   border-radius: 15px;
+  font-weight: 500;
 }
 .popover > .arrow {
   border-width: 6px;
