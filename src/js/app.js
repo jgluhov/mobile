@@ -37,15 +37,16 @@ zeroState.controller('StateController', ['$scope','StateService', 'Notification'
     }
   };
 
-  $scope.onChange = function(text) {
-    if(_.isEmpty(text)) {
+
+  $scope.$watch(function () {
+    return $scope.state.emotions[0].name;
+  }, function (newValue) {
+    if(_.isUndefined(newValue) || _.isEmpty(newValue)) {
       if ($scope.popover.emotion.state)
         $scope.popover.emotion.state = false;
       return;
     }
-
-
-    StateService.search(text, 3).then(function(res) {
+    StateService.search(newValue, 3).then(function(res) {
       if(!_.isEmpty(res.data)) {
         $scope.popover.emotion.state = true;
         $scope.popover.emotion.messages = StateService.compile(res.data)
@@ -53,7 +54,7 @@ zeroState.controller('StateController', ['$scope','StateService', 'Notification'
         $scope.popover.emotion.state = false;
       }
     })
-  };
+  });
 
   $scope.submit = function(stateForm) {
     if(stateForm.$invalid) return;

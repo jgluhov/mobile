@@ -148,7 +148,7 @@ ul.list-unstyled li {
   border: none;
 }
 .popover.top {
-  margin-top: -9px;
+  margin-top: -8px;
 }
 .popover.top > .arrow {
   left: 30% !important;

@@ -1,7 +1,7 @@
 .header
   .zs-sign
 .uk-vertical-align.uk-text-center.uk-height-1-1
-  form.uk-form.uk-vertical-align-middle.zs-form(name='stateForm')
+  form.uk-form.uk-vertical-align-middle.zs-form(name='stateForm' novalidate)
     .uk-form-row.uk-container-center
       .uk-form-icon
         .uk-icon-hash
@@ -10,9 +10,7 @@
         popover-placement="top" popover-trigger="none"
         popover-is-open="popover.emotion.state && popover.emotion.focus"
         popover-animation='true'
-        popover-append-to-body='false'
-        focus="popover.emotion.focus"
-        ng-change='onChange(state.emotions[0].name)' required)
+        focus="popover.emotion.focus" required)
     .uk-form-row.uk-container-center
       .uk-form-icon
         .uk-icon-at
