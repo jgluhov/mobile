@@ -12,20 +12,11 @@ zeroState.config(['$routeProvider', '$locationProvider',
           templateUrl: "templates/home",
           controller: "HomeController"
         })
-
-        .when('/knowledges', {
-          templateUrl: "templates/knowledges",
-          controller: "KnowledgesIndexController"
-        })
     }
   ]
 );
 
 
 zeroState.controller('HomeController', function($scope) {
-  $scope.message = 'Everyone come and see how good I look!';
-});
-
-zeroState.controller('KnowledgesIndexController', function($scope) {
   $scope.message = 'Everyone come and see how good I look!';
 });

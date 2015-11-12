@@ -13,7 +13,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('less', function () {
-  gulp.src('./src/less/uikit.less')
+  gulp.src('./src/less/*.less')
     .pipe(plumber())
     .pipe(less())
     .pipe(gulp.dest('./assets/css'))

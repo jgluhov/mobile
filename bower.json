@@ -21,6 +21,7 @@
   "dependencies": {
     "angular": "~1.4.7",
     "angular-resource": "~1.4.7",
-    "uikit": "~2.23.0"
+    "uikit": "~2.23.0",
+    "bootstrap": "~3.3.5"
   }
 }
