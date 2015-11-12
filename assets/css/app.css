@@ -103,6 +103,14 @@ html {
   -ms-transform: scale(0.7);
   transform: scale(0.7);
 }
+.uk-icon-at {
+  content: url("/img/at_input.png");
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -o-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+}
 .popover-content {
   padding: 3px 5px;
 }

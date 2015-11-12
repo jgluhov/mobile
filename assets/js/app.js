@@ -55,7 +55,8 @@ zeroState.controller('StateController', ['$scope','StateService', 'Notification'
     })
   };
 
-  $scope.submit = function() {
+  $scope.submit = function(stateForm) {
+    if(stateForm.$invalid) return;
     StateService.create($scope.state).then(function() {
       notify.success({message:'Your State successfully added!'});
       $scope.state = StateService.model();
