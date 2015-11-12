@@ -1,8 +1,27 @@
+background-linear-gradient(startPoint, startColor, startInterval, endColor, endInterval)
+  background-color startColor
+  background-image -webkit-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image -moz-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image -ms-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image -o-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+
+.zs-sign
+  height 100%
+  position relative
+  top 25px
+  background-image url('/img/hashtag_bg@2x.png')
+  background-size contain
+  background-repeat no-repeat
+  background-position center
+
 .zs-form
   width 80%
+
   .uk-form-icon
     width 100%
-
+    position relative
+    z-index 1
     input
       border-radius 30px
       width 100%
@@ -35,3 +54,24 @@
 .uk-icon-hash
   content url('/img/hash_input.png')
   transform scale(.7)
+
+.popover-content
+  padding 3px 5px
+
+ul.list-unstyled
+  margin-bottom 0
+  li
+    color zs-button-color
+    font-size 11px
+
+
+.ui-notification
+  width 100%
+  text-align center
+  background background-linear-gradient(top, #a4bdc7, 15%, #85b1c0, 55%)
+  font-weight 200
+  &.success
+    color: #ffffff;
+
+    background: #89aebb;
+
