@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
   stylus = require('gulp-stylus'),
-  nib = require('nib'),
+  koutoSwiss = require('kouto-swiss'),
   browserSync = require('browser-sync').create(),
   less = require('gulp-less'),
   plumber = require('gulp-plumber');
@@ -23,7 +23,7 @@ gulp.task('less', function () {
 gulp.task('styl', function () {
   gulp.src('./src/styl/app.styl')
     .pipe(plumber())
-    .pipe(stylus({use: nib(), import: 'nib'}))
+    .pipe(stylus({use: koutoSwiss(), import: 'kouto-swiss'}))
     .pipe(gulp.dest('./assets/css'))
     .pipe(browserSync.stream());
 });
