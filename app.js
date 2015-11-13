@@ -15,4 +15,5 @@ app.use(express.static(path.join(__dirname, 'bower_components')));
 
 app.use('/', routes);
 
-app.listen(3000);
+var port = app.listen(process.env.PORT || 3000);
+app.listen(port);
