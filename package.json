@@ -4,8 +4,7 @@
   "description": "mobile app",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "test": "node app.js"
   },
   "keywords": [
     "mobile"
