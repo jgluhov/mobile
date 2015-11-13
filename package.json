@@ -21,6 +21,7 @@
     "express": "^4.13.3",
     "jade": "^1.11.0",
     "kouto-swiss": "^0.11.13",
+    "morgan": "^1.6.1",
     "nodemon": "^1.8.1"
   },
   "devDependencies": {
