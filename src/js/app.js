@@ -1,5 +1,5 @@
 var zeroState = angular.module('zeroState',
-  ["ngResource", "ngRoute", 'ngCookies', "ui.bootstrap", "ui-notification", "LocalStorageModule"]);
+  ["ngResource", "ngRoute", 'ngCookies', "ui.bootstrap", "ui-notification"]);
 
 zeroState.config(['$routeProvider', '$locationProvider', '$httpProvider',
     function ($routeProvider, $locationProvider) {
@@ -16,11 +16,6 @@ zeroState.config(['$routeProvider', '$locationProvider', '$httpProvider',
     }
   ]
 );
-
-zeroState.config(function (localStorageServiceProvider) {
-  localStorageServiceProvider
-    .setStorageCookieDomain('idemind-api.herokuapp.com');
-});
 
 zeroState.config(function (NotificationProvider) {
   NotificationProvider.setOptions({
@@ -39,8 +34,8 @@ zeroState.constant('StateConstants', {
   token: 'ae33d6face3d0a8882059e2583725b786c2c4fb96e7c5805b4cdb0590292edfc'
 });
 
-zeroState.controller('StateController', ['$scope', '$cookies','$cookieStore', 'StateService', 'StateConstants', 'Notification','localStorageService',
-  function ($scope, $cookies, $cookieStore, StateService, StateConstants, notify, localStorageService) {
+zeroState.controller('StateController', ['$scope', '$cookies','$cookieStore', 'StateService', 'StateConstants', 'Notification',
+  function ($scope, $cookies, $cookieStore, StateService, StateConstants, notify) {
 
     $cookies.token = StateConstants.token;
     console.log($cookies.token);
