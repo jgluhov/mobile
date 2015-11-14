@@ -1,8 +1,8 @@
 var zeroState = angular.module('zeroState',
-  ["ngResource", "ngRoute", 'ngCookies', "ui.bootstrap", "ui-notification"]);
+  ["ngResource", "ngRoute", 'ipCookie', "ui.bootstrap", "ui-notification"]);
 
 zeroState.config(['$routeProvider', '$locationProvider', '$httpProvider',
-    function ($routeProvider, $locationProvider) {
+    function ($routeProvider, $locationProvider, $httpProvider) {
       $locationProvider.html5Mode({
         enabled: true,
         requireBase: false
@@ -13,6 +13,10 @@ zeroState.config(['$routeProvider', '$locationProvider', '$httpProvider',
           templateUrl: "templates/home",
           controller: "StateController"
         });
+
+
+      $httpProvider.defaults.useXDomain = true;
+      delete $httpProvider.defaults.headers.common['X-Requested-With'];
     }
   ]
 );
@@ -34,12 +38,11 @@ zeroState.constant('StateConstants', {
   token: 'ae33d6face3d0a8882059e2583725b786c2c4fb96e7c5805b4cdb0590292edfc'
 });
 
-zeroState.controller('StateController', ['$scope', '$cookies','$cookieStore', 'StateService', 'StateConstants', 'Notification',
-  function ($scope, $cookies, $cookieStore, StateService, StateConstants, notify) {
+zeroState.controller('StateController', ['$scope', 'ipCookie', 'StateService', 'StateConstants', 'Notification',
+  function ($scope, ipCookie, StateService, StateConstants, notify) {
 
-    $cookies.put('token', StateConstants.token);
-    console.log($cookies.get('token'));
-    $cookieStore.put('token', StateConstants.token);
+    ipCookie('token', StateConstants.token, { domain: 'idemind-api.herokuapp.com' });
+
 
     $scope.state = StateService.model();
 
