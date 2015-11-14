@@ -37,9 +37,9 @@ zeroState.constant('StateConstants', {
 zeroState.controller('StateController', ['$scope', '$cookies','$cookieStore', 'StateService', 'StateConstants', 'Notification',
   function ($scope, $cookies, $cookieStore, StateService, StateConstants, notify) {
 
-    $cookies.token = StateConstants.token;
-    console.log($cookies.token);
-    console.log($cookieStore.put('token', StateConstants.token));
+    $cookies.put('token', StateConstants.token);
+    console.log($cookies.get('token'));
+    $cookieStore.put('token', StateConstants.token);
 
     $scope.state = StateService.model();
 
