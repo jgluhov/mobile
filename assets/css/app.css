@@ -138,6 +138,11 @@ html {
 }
 body {
   background: #4b6a7a;
+  background-image: -webkit-radial-gradient(ellipse at center,rgba(0,183,234,0.7) 0%,#54778a 100%);
+  background-image: -moz-radial-gradient(ellipse at center,rgba(0,183,234,0.7) 0%,#54778a 100%);
+  background-image: -ms-radial-gradient(ellipse at center,rgba(0,183,234,0.7) 0%,#54778a 100%);
+  background-image: -o-radial-gradient(ellipse at center,rgba(0,183,234,0.7) 0%,#54778a 100%);
+  background-image: radial-gradient(ellipse at center,rgba(0,183,234,0.7) 0%,#54778a 100%);
   font-family: 'Open Sans', sans-serif;
 }
 @font-face {
@@ -192,6 +197,49 @@ body {
   src: url("../fonts/ubuntu/Ubuntu-BoldItalic.ttf.eot");
   src: url("../fonts/ubuntu/Ubuntu-BoldItalic.ttf.eot?#iefix") format("embedded-opentype"), url("../fonts/ubuntu/Ubuntu-BoldItalic.ttf.woff2") format("woff2"), url("../fonts/ubuntu/Ubuntu-BoldItalic.ttf.woff") format("woff"), url("../fonts/ubuntu/Ubuntu-BoldItalic.ttf.ttf") format("truetype"), url("../fonts/ubuntu/Ubuntu-BoldItalic.ttf.svg#Ubuntu") format("svg");
 }
+.uk-icon-hash:before {
+  content: url("/img/icons/hash.png");
+}
+.uk-icon-at:before {
+  content: url("/img/icons/at.png");
+}
+.ui-notification {
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+}
+.ui-notification.success {
+  color: #fff;
+}
+.popover-content {
+  padding: 3px 15px;
+}
+.popover {
+  left: 0 !important;
+  width: 100% !important;
+  background-color: #f0f4f7;
+  max-width: none;
+  border: none;
+  border-radius: 15px;
+  font-weight: 500;
+}
+.popover > .arrow {
+  border-width: 6px;
+}
+.popover.top {
+  margin-top: -6px;
+}
+.popover.top > .arrow {
+  left: 30% !important;
+  bottom: -6px;
+}
+ul.list-unstyled {
+  margin-bottom: 0;
+}
+ul.list-unstyled li {
+  color: #5f9aa9;
+  font-size: 11px;
+}
 html {
   position: relative;
   min-height: 100%;
@@ -216,12 +264,16 @@ html {
 .container .text-muted {
   margin: 20px 0;
 }
+.zs-height-1-1 {
+  height: -webkit-calc(100% - 100px);
+  height: calc(100% - 100px);
+}
 .zs-sign {
   height: 100%;
   width: 80%;
   position: relative;
   top: 25px;
-  background-image: url("/img/hashtag_bg@2x.png");
+  background-image: url("/img/zerostate.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -230,12 +282,15 @@ html {
 .zs-form {
   width: 80%;
 }
-.zs-form .uk-form-icon {
+.uk-form-row {
+  margin-bottom: 15px !important;
+}
+.uk-form-row .uk-form-icon {
   width: 100%;
   position: relative;
   z-index: 1;
 }
-.zs-form .uk-form-icon input {
+.uk-form-row .uk-form-icon input {
   border-radius: 30px;
   width: 100%;
   border: 3px solid #52798e;
@@ -245,15 +300,19 @@ html {
   font-weight: 300;
   text-transform: lowercase;
 }
-.zs-form .uk-form-icon input:focus {
+.uk-form-row .uk-form-icon input:focus {
   color: #8ea1a7;
+  border-bottom: 3px solid #99baca;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.uk-form-row .uk-form-icon > [class*='uk-icon-'] {
+  margin-left: 13px;
+  margin-top: -16px;
 }
 .uk-form-icon:not(.uk-form-icon-flip) > input {
-  padding-left: 40px !important;
-}
-.uk-form-icon > [class*='uk-icon-'] {
-  top: 36%;
-  left: 10px;
+  padding-left: 50px !important;
+  padding-right: 20px !important;
 }
 .zs-button-box {
   position: fixed;
@@ -265,57 +324,17 @@ html {
 }
 .zs-button-box .zs-button {
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   color: #5f9aa9;
   font-weight: 800;
 }
-.uk-icon-hash {
-  content: url("/img/hash_input.png");
-  -webkit-transform: scale(0.7);
-  -ms-transform: scale(0.7);
-  transform: scale(0.7);
+.zs-button-box .zs-button:focus {
+  border: 3px solid #99baca;
 }
-.uk-icon-at {
-  content: url("/img/at_input.png");
-  -webkit-transform: scale(0.7);
-  -ms-transform: scale(0.7);
-  transform: scale(0.7);
-}
-.popover-content {
-  padding: 3px 15px;
-}
-ul.list-unstyled {
-  margin-bottom: 0;
-}
-ul.list-unstyled li {
-  color: #5f9aa9;
-  font-size: 11px;
-}
-.ui-notification {
-  width: 100%;
-  text-align: center;
-  font-weight: 400;
-}
-.ui-notification.success {
-  color: #fff;
-}
-.popover {
-  left: 0 !important;
-  width: 100% !important;
-  background-color: #f0f4f7;
-  max-width: none;
-  border: none;
-  border-radius: 15px;
-  font-weight: 500;
-}
-.popover > .arrow {
-  border-width: 6px;
-}
-.popover.top {
-  margin-top: -6px;
-}
-.popover.top > .arrow {
-  left: 30% !important;
-  bottom: -6px;
+@media screen and (max-height: 250px) {
+  .zs-button-box {
+    position: static;
+    margin-bottom: 0 !important;
+  }
 }

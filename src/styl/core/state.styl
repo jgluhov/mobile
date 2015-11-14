@@ -1,17 +1,12 @@
-background-linear-gradient(startPoint, startColor, startInterval, endColor, endInterval)
-  background-color startColor
-  background-image -webkit-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
-  background-image -moz-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
-  background-image -ms-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
-  background-image -o-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
-  background-image linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+.zs-height-1-1
+  height calc("100% - 100px")
 
 .zs-sign
   height 100%
   width 80%
   position relative
   top 25px
-  background-image url('/img/hashtag_bg@2x.png')
+  background-image url('/img/zerostate.png')
   background-size contain
   background-repeat no-repeat
   background-position center
@@ -20,10 +15,14 @@ background-linear-gradient(startPoint, startColor, startInterval, endColor, endI
 .zs-form
   width 80%
 
+.uk-form-row
+  margin-bottom 15px!important
+
   .uk-form-icon
     width 100%
     position relative
     z-index 1
+
     input
       border-radius 30px
       width 100%
@@ -35,15 +34,15 @@ background-linear-gradient(startPoint, startColor, startInterval, endColor, endI
       text-transform lowercase
       &:focus
         color zs-input-color-focus
+        border-bottom 3px solid #99baca
+        box-shadow none
+    > [class*='uk-icon-']
+      margin-left 13px
+      margin-top -16px
 
 .uk-form-icon:not(.uk-form-icon-flip) > input
-  padding-left 40px!important
-
-.uk-form-icon > [class*='uk-icon-']
-  top 36%
-  left 10px
-
-
+  padding-left 50px!important
+  padding-right 20px!important
 
 .zs-button-box
   position fixed
@@ -52,53 +51,26 @@ background-linear-gradient(startPoint, startColor, startInterval, endColor, endI
   width 100%
   margin-bottom 20px!important
   margin-top 0!important
+
   .zs-button
     border-radius 50%
-    width 70px
-    height 70px
+    width 80px
+    height 80px
     color zs-button-color
     font-weight 800
+    &:focus
+      border 3px solid #99baca
+
+@media screen and (max-height: 250px)
+  .zs-button-box
+    position static
+    margin-bottom 0!important
 
 
-.uk-icon-hash
-  content url('/img/hash_input.png')
-  transform scale(.7)
-.uk-icon-at
-  content url('/img/at_input.png')
-  transform scale(.7)
-
-.popover-content
-  padding 3px 15px
-
-ul.list-unstyled
-  margin-bottom 0
-  li
-    color zs-button-color
-    font-size 11px
 
 
-.ui-notification
-  width 100%
-  text-align center
-  font-weight 400
-.ui-notification.success
-  color: #ffffff;
-  //background-linear-gradient(top, #b6d1db, 15%, #90c0cf, 55%)
 
 
-.popover
-  left 0!important
-  width 100%!important
-  background-color #f0f4f7
-  max-width none
-  border none
-  border-radius 15px
-  font-weight 500
-.popover
-  > .arrow
-    border-width 6px
-.popover.top
-  margin-top -6px
-.popover.top > .arrow
-  left 30%!important
-  bottom -6px
+
+
+
