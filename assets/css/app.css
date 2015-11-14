@@ -210,6 +210,7 @@ body {
 }
 .ui-notification.success {
   color: #fff;
+  background-color: #90c0cf;
 }
 .popover-content {
   padding: 3px 15px;
@@ -328,9 +329,6 @@ html {
   height: 80px;
   color: #5f9aa9;
   font-weight: 800;
-}
-.zs-button-box .zs-button:focus {
-  border: 3px solid #99baca;
 }
 @media screen and (max-height: 250px) {
   .zs-button-box {

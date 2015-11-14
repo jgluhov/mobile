@@ -2,24 +2,15 @@ doctype html
 html.uk-height-1-1(ng-app='zeroState')
   head
     meta(charset='utf-8')
-    title ZeroState
     meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
-    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css')
-    link(rel='stylesheet' href='css/uikit.css')
-    link(rel='stylesheet' href='css/bootstrap.css')
-    link(rel='stylesheet' href='angular-ui-notification/dist/angular-ui-notification.min.css')
+
+    title ZeroState
+
+    link(rel='stylesheet' href='css/vendor.min.css')
     link(rel='stylesheet' href='css/app.css')
-    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,600,600italic,700,700italic,300&subset=latin,cyrillic')
+
   body.uk-height-1-1
     ng-view
 
-    script(src='angular/angular.min.js')
-    script(src='angular-resource/angular-resource.min.js')
-    script(src='angular-route/angular-route.min.js')
-    //script(src='angular-cookies/angular-cookies.min.js')
-    script(src='angular-cookie/angular-cookie.min.js')
-    script(src='angular-bootstrap/ui-bootstrap-tpls.min.js')
-    script(src='angular-ui-notification/dist/angular-ui-notification.min.js')
-    script(src='jquery/dist/jquery.min.js')
-    script(src='lodash/lodash.min.js')
+    script(src='js/vendor.min.js')
     script(src='js/app.js')
