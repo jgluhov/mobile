@@ -8,3 +8,16 @@ body
   background bg-color
   background-image radial-gradient(ellipse at center, rgba(0,183,234,0.7) 0%, #54778a 100%);
   font-family: 'Ubuntu', sans-serif;
+
+
+/* Mozilla based browsers */
+::-moz-selection
+  background-color zs-input-bg-color-selected
+  color zs-input-color-selected
+  border-radius 5px
+
+/* Works in Safari */
+::selection
+  background-color zs-input-bg-color-selected
+  color zs-input-color-selected
+  border-radius 5px
