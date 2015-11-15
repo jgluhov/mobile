@@ -1511,7 +1511,7 @@ app.config(['$routeProvider', '$locationProvider',
 
 app.config(['NotificationProvider', function (NotificationProvider) {
   NotificationProvider.setOptions({
-    delay: 30000,
+    delay: 3000,
     startTop: 0,
     startRight: 0,
     verticalSpacing: 5,
@@ -1520,7 +1520,7 @@ app.config(['NotificationProvider', function (NotificationProvider) {
   });
 }]);
 
-}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_4dfbe718.js","/")
+}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_d4be3bf4.js","/")
 },{"./constants/StateConstants":5,"./controllers/StateController":6,"./directives/FocusDirective":7,"./services/StateService":9,"buffer":1,"oMfpAn":4}],9:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 module.exports = function(app) {
