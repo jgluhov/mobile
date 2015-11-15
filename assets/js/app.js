@@ -1431,7 +1431,7 @@ module.exports = function(app) {
         }
 
         StateService.search(newValue.toLowerCase(), 3).then(function (res) {
-          if (!_.isEmpty(res.data)) {
+          if (!_.isEmpty(res.data) && !_.isUndefined($scope.state.emotions[0].name)) {
             $scope.popover.emotion.state = true;
             $scope.popover.emotion.messages = StateService.compile(res.data)
           } else {
@@ -1454,9 +1454,9 @@ module.exports = function(app) {
 }).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/controllers/StateController.js","/controllers")
 },{"buffer":1,"oMfpAn":4}],7:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
-module.exports = function(app) {
+module.exports = function (app) {
   app
-    .directive('focus', function ($timeout, $parse) {
+    .directive('focus', ['$timeout', '$parse', function ($timeout, $parse) {
       return {
         restrict: 'A',
         link: function (scope, element, attrs) {
@@ -1477,7 +1477,7 @@ module.exports = function(app) {
           })
         }
       }
-    });
+    }]);
 };
 
 
@@ -1509,7 +1509,7 @@ app.config(['$routeProvider', '$locationProvider',
   ]
 );
 
-app.config(function (NotificationProvider) {
+app.config(['NotificationProvider', function (NotificationProvider) {
   NotificationProvider.setOptions({
     delay: 30000,
     startTop: 0,
@@ -1518,9 +1518,9 @@ app.config(function (NotificationProvider) {
     horizontalSpacing: 0,
     positionY: 'top'
   });
-});
+}]);
 
-}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_8e1e9787.js","/")
+}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_4dfbe718.js","/")
 },{"./constants/StateConstants":5,"./controllers/StateController":6,"./directives/FocusDirective":7,"./services/StateService":9,"buffer":1,"oMfpAn":4}],9:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 module.exports = function(app) {

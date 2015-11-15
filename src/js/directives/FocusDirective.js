@@ -1,6 +1,6 @@
-module.exports = function(app) {
+module.exports = function (app) {
   app
-    .directive('focus', function ($timeout, $parse) {
+    .directive('focus', ['$timeout', '$parse', function ($timeout, $parse) {
       return {
         restrict: 'A',
         link: function (scope, element, attrs) {
@@ -21,6 +21,6 @@ module.exports = function(app) {
           })
         }
       }
-    });
+    }]);
 };
 

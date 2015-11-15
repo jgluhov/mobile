@@ -25,10 +25,7 @@
     "uikit": "~2.23.0",
     "bootstrap": "~3.3.5",
     "angular-bootstrap": "~0.14.3",
-    "angular-ui-notification": "~0.0.14",
-    "angular-cookies": "~1.4.7",
-    "angular-local-storage": "~0.2.3",
-    "angular-cookie": "~4.0.9"
+    "angular-ui-notification": "~0.0.14"
   },
   "devDependencies": {
     "lodash": "~3.10.1"

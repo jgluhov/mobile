@@ -23,7 +23,7 @@ app.config(['$routeProvider', '$locationProvider',
   ]
 );
 
-app.config(function (NotificationProvider) {
+app.config(['NotificationProvider', function (NotificationProvider) {
   NotificationProvider.setOptions({
     delay: 30000,
     startTop: 0,
@@ -32,4 +32,4 @@ app.config(function (NotificationProvider) {
     horizontalSpacing: 0,
     positionY: 'top'
   });
-});
+}]);
