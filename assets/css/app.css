@@ -145,6 +145,16 @@ body {
   background-image: radial-gradient(ellipse at center,rgba(0,183,234,0.7) 0%,#54778a 100%);
   font-family: 'Ubuntu', sans-serif;
 }
+::-moz-selection {
+  background-color: #bdd1d7;
+  color: #fff;
+  border-radius: 5px;
+}
+::selection {
+  background-color: #bdd1d7;
+  color: #fff;
+  border-radius: 5px;
+}
 @font-face {
   font-family: "Ubuntu";
   font-weight: 300;
