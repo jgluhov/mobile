@@ -21,7 +21,7 @@ module.exports = function(app) {
         }
 
         StateService.search(newValue.toLowerCase(), 3).then(function (res) {
-          if (!_.isEmpty(res.data)) {
+          if (!_.isEmpty(res.data) && !_.isUndefined($scope.state.emotions[0].name)) {
             $scope.popover.emotion.state = true;
             $scope.popover.emotion.messages = StateService.compile(res.data)
           } else {

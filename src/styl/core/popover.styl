@@ -1,25 +1,27 @@
-.popover-content
-  padding 3px 15px
-
 .popover
   left 0!important
   width 100%!important
-  background-color #f0f4f7
+  background-color popover-bg-color
   max-width none
   border none
   border-radius 15px
   font-weight 500
-.popover
-  > .arrow
-    border-width 6px
-.popover.top
-  margin-top -6px
-.popover.top > .arrow
-  left 30%!important
-  bottom -6px
 
-ul.list-unstyled
-  margin-bottom 0
-  li
-    color zs-button-color
-    font-size 11px
+  .arrow
+    border-top-color transparent!important
+    &:after
+      border-width 5px
+      border-top-color popover-bg-color
+  &.top
+    margin-top -6px
+    > .arrow
+      left 30%!important
+      bottom -6px
+
+  .popover-content
+    padding 3px 15px
+    ul
+      margin-bottom 0
+      li
+        color zs-button-color
+        font-size 11px

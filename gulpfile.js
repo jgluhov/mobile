@@ -11,7 +11,8 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   minifyCss = require('gulp-minify-css'),
   sourcemaps = require('gulp-sourcemaps'),
-  concatCss = require('gulp-concat-css');
+  concatCss = require('gulp-concat-css'),
+  clean = require('gulp-clean');
 
 gulp.task('vendor:js', function () {
   gulp.src([
@@ -22,7 +23,8 @@ gulp.task('vendor:js', function () {
     './bower_components/angular-ui-notification/dist/angular-ui-notification.min.js',
     './bower_components/lodash/lodash.min.js'
   ])
-    .pipe(concat('vendor.min.js'))
+    .pipe(concat('vendor.js'))
+    .pipe(rename('vendor.min.js'))
     .pipe(gulp.dest('./assets/js'))
 });
 
@@ -33,14 +35,9 @@ gulp.task('js', function() {
       insertGlobals : true
     }))
     .pipe(gulp.dest('./assets/js'))
-});
-
-gulp.task('less', function () {
-  gulp.src('./src/less/*.less')
-    .pipe(plumber())
-    .pipe(less())
-    .pipe(gulp.dest('./src/vendor'))
-    .pipe(browserSync.stream());
+    .pipe(uglify())
+    .pipe(rename('app.min.js'))
+    .pipe(gulp.dest('./assets/js'))
 });
 
 gulp.task('styl', function () {
@@ -48,6 +45,19 @@ gulp.task('styl', function () {
     .pipe(plumber())
     .pipe(stylus({use: koutoSwiss(), import: 'kouto-swiss'}))
     .pipe(gulp.dest('./assets/css'))
+    .pipe(sourcemaps.init())
+    .pipe(minifyCss())
+    .pipe(rename('app.min.css'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./assets/css'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('less', function () {
+  gulp.src('./src/less/*.less')
+    .pipe(plumber())
+    .pipe(less())
+    .pipe(gulp.dest('./src/vendor'))
     .pipe(browserSync.stream());
 });
 
@@ -63,15 +73,32 @@ gulp.task('vendor:css',['less', 'sass'], function() {
     './src/vendor/*.css',
     './bower_components/angular-ui-notification/dist/angular-ui-notification.min.css'
   ])
-    .pipe(plumber())
+    .pipe(concatCss('vendor.css'))
+    .pipe(gulp.dest('./assets/css'))
     .pipe(sourcemaps.init())
-    .pipe(concatCss('vendor.min.css'))
     .pipe(minifyCss())
-    .pipe(sourcemaps.write())
+    .pipe(rename('vendor.min.css'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./assets/css'))
 });
 
-gulp.task('serve', ['js','vendor:js','vendor:css','styl'], function() {
+gulp.task('img', function() {
+  gulp.src('./src/img/**/*')
+    .pipe(gulp.dest('./assets/img'))
+});
+
+gulp.task('fonts', function() {
+  gulp.src('./src/fonts/**/*')
+    .pipe(gulp.dest('./assets/fonts'))
+});
+
+gulp.task('clean', function() {
+  return gulp.src('assets', {read: false})
+    .pipe(clean());
+});
+
+gulp.task('serve', ['clean'], function() {
+  gulp.start('js','styl','fonts','img','vendor:js','vendor:css');
   browserSync.init({
     proxy: "localhost:3000"
   });
