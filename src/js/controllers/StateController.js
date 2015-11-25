@@ -1,7 +1,6 @@
 module.exports = function(app) {
   app.controller('StateController', ['$scope', 'StateService', 'StateConstants', 'Notification',
     function ($scope, StateService, StateConstants, notify) {
-
       $scope.state = StateService.model();
 
       $scope.popover = {
@@ -31,7 +30,10 @@ module.exports = function(app) {
       });
 
       $scope.submit = function (stateForm) {
-        if (stateForm.$invalid) return;
+        if (stateForm.$invalid) {
+          return;
+        }
+
         StateService.create($scope.state).then(function () {
           notify.success({message: 'Your State successfully added!'});
           $scope.state = StateService.model();

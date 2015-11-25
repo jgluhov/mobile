@@ -6,6 +6,8 @@
       .uk-form-icon
         .uk-icon-hover.uk-icon-hash
         input(type="text" placeholder="" ng-model='state.emotions[0].name'
+        ng-pattern='/^[a-zA-Zа-яА-Я]*$/' name='emotion'
+        ng-class='{"uk-form-danger": stateForm.emotion.$error.pattern}'
         uib-popover-html='popover.emotion.messages'
         popover-placement="top" popover-trigger="none"
         popover-is-open="popover.emotion.state && popover.emotion.focus"

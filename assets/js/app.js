@@ -1411,7 +1411,6 @@ module.exports = function(app) {
 module.exports = function(app) {
   app.controller('StateController', ['$scope', 'StateService', 'StateConstants', 'Notification',
     function ($scope, StateService, StateConstants, notify) {
-
       $scope.state = StateService.model();
 
       $scope.popover = {
@@ -1441,7 +1440,10 @@ module.exports = function(app) {
       });
 
       $scope.submit = function (stateForm) {
-        if (stateForm.$invalid) return;
+        if (stateForm.$invalid) {
+          return;
+        }
+
         StateService.create($scope.state).then(function () {
           notify.success({message: 'Your State successfully added!'});
           $scope.state = StateService.model();
@@ -1520,7 +1522,7 @@ app.config(['NotificationProvider', function (NotificationProvider) {
   });
 }]);
 
-}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_a7a36fa9.js","/")
+}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_9b4e44c9.js","/")
 },{"./constants/StateConstants":5,"./controllers/StateController":6,"./directives/FocusDirective":7,"./services/StateService":9,"buffer":1,"oMfpAn":4}],9:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 module.exports = function(app) {
