@@ -99,9 +99,9 @@ gulp.task('clean', function() {
 
 gulp.task('serve', ['clean'], function() {
   gulp.start('js','styl','fonts','img','vendor:js','vendor:css');
-  browserSync.init({
-    proxy: "localhost:3000"
-  });
+  // browserSync.init({
+  //   proxy: "localhost:3000"
+  // });
 
   gulp.watch("templates/*.jade", browserSync.reload);
   gulp.watch("src/js/**/*.js", ['js']);

@@ -1399,7 +1399,7 @@ process.chdir = function (dir) {
 module.exports = function(app) {
   app.constant('StateConstants', {
     local: 'http://192.168.0.113:8010/',
-    production: 'https://idemind-api.herokuapp.com/',
+    production: 'http://api.0state.com/',
     token: 'ae33d6face3d0a8882059e2583725b786c2c4fb96e7c5805b4cdb0590292edfc'
   });
 };
@@ -1409,8 +1409,8 @@ module.exports = function(app) {
 },{"buffer":1,"oMfpAn":4}],6:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 module.exports = function(app) {
-  app.controller('StateController', ['$scope', 'StateService', 'StateConstants', 'Notification',
-    function ($scope, StateService, StateConstants, notify) {
+  app.controller('StateController', ['$scope', 'StateService', 'StateConstants', 'Notification', '$http',
+    function ($scope, StateService, StateConstants, notify, $http) {
       $scope.state = StateService.model();
 
       $scope.popover = {
@@ -1419,6 +1419,18 @@ module.exports = function(app) {
           message: ''
         }
       };
+      
+      var session = null;
+
+      var params = {
+        token: StateConstants.token,
+        email: 'jgluhov@gmail.com',
+        password: 'Mathemat1cs'
+      };
+      
+      $http.get(StateConstants.production + 'auth', { params: params }).then(function(res) {
+        session = res.data.sessionId;
+      });
 
       $scope.$watch(function () {
         return $scope.state.emotions[0].name;
@@ -1444,13 +1456,15 @@ module.exports = function(app) {
           return;
         }
 
+        $scope.state.session = session;
+
         StateService.create($scope.state).then(function () {
           notify.success({message: 'Your State successfully added!'});
-          $scope.state = StateService.model();
+          $scope.state = StateService.model();          
           if ($scope.popover.emotion.state)
             $scope.popover.emotion.state = false;
-        })
-      }
+        });
+      };
     }]);
 };
 }).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/controllers/StateController.js","/controllers")
@@ -1522,14 +1536,21 @@ app.config(['NotificationProvider', function (NotificationProvider) {
   });
 }]);
 
-}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_9b4e44c9.js","/")
+}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_43abdc47.js","/")
 },{"./constants/StateConstants":5,"./controllers/StateController":6,"./directives/FocusDirective":7,"./services/StateService":9,"buffer":1,"oMfpAn":4}],9:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 module.exports = function(app) {
   app.service('StateService', ['$http', '$sce', 'StateConstants', function ($http, $sce, StateConstants) {
 
     this.create = function (data) {
-      return $http.post(StateConstants.production + 'states?token=' + StateConstants.token, data);
+      var params = data;      
+      data.lang = {
+        code : 'en'
+      };
+
+      data.name = data.emotions[0].name;
+
+      return $http.post(StateConstants.production + 'emotions?token=' + StateConstants.token + '&session=' + data.session + '&base=false', data);
     };
 
     this.search = function (name, limit) {

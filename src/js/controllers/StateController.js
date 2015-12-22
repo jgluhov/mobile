@@ -1,6 +1,6 @@
 module.exports = function(app) {
-  app.controller('StateController', ['$scope', 'StateService', 'StateConstants', 'Notification',
-    function ($scope, StateService, StateConstants, notify) {
+  app.controller('StateController', ['$scope', 'StateService', 'StateConstants', 'Notification', '$http',
+    function ($scope, StateService, StateConstants, notify, $http) {
       $scope.state = StateService.model();
 
       $scope.popover = {
@@ -9,6 +9,18 @@ module.exports = function(app) {
           message: ''
         }
       };
+      
+      var session = null;
+
+      var params = {
+        token: StateConstants.token,
+        email: 'jgluhov@gmail.com',
+        password: 'Mathemat1cs'
+      };
+      
+      $http.get(StateConstants.production + 'auth', { params: params }).then(function(res) {
+        session = res.data.sessionId;
+      });
 
       $scope.$watch(function () {
         return $scope.state.emotions[0].name;
@@ -34,12 +46,14 @@ module.exports = function(app) {
           return;
         }
 
+        $scope.state.session = session;
+
         StateService.create($scope.state).then(function () {
           notify.success({message: 'Your State successfully added!'});
-          $scope.state = StateService.model();
+          $scope.state = StateService.model();          
           if ($scope.popover.emotion.state)
             $scope.popover.emotion.state = false;
-        })
-      }
+        });
+      };
     }]);
 };

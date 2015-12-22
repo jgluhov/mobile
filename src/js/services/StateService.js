@@ -2,7 +2,14 @@ module.exports = function(app) {
   app.service('StateService', ['$http', '$sce', 'StateConstants', function ($http, $sce, StateConstants) {
 
     this.create = function (data) {
-      return $http.post(StateConstants.production + 'states?token=' + StateConstants.token, data);
+      var params = data;      
+      data.lang = {
+        code : 'en'
+      };
+
+      data.name = data.emotions[0].name;
+
+      return $http.post(StateConstants.production + 'emotions?token=' + StateConstants.token + '&session=' + data.session + '&base=false', data);
     };
 
     this.search = function (name, limit) {
